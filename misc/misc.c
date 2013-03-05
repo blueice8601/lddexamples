@@ -3,7 +3,6 @@
  */
 #include <linux/module.h>
 #include <linux/kernel.h>
-#include <linux/platform_device.h>
 #include <linux/miscdevice.h>
 #include <linux/fs.h>
 #include <asm/uaccess.h>
