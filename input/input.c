@@ -1,3 +1,6 @@
+/*
+ * TODO: rmmod input will cause system crash
+ */
 #include <linux/input.h>
 #include <linux/module.h>
 #include <linux/init.h>
