@@ -45,7 +45,7 @@ static int __init input_init(void)
     idev = input_allocate_device();
     pedata->idev = idev;
 
-    idev->name = "input driver example";
+    idev->name = "input_example";
     idev->phys = "/sys/fakepath"; //useless
     idev->id.bustype = BUS_HOST; //useless
     idev->id.vendor = 0x0001;       //useless

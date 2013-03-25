@@ -23,7 +23,7 @@ int main(int argv, char ** argc)
     int wirte2driver = 21;
     fd = open(MISC_IOCTL_PATH, O_RDWR);
     if (fd < 0) {
-        printf("too sed, file path error!\n");
+        printf("too sad, file path error!\n");
         return -1;
     }
 
