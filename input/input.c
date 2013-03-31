@@ -22,11 +22,11 @@ static void input_work(struct work_struct *work)
     {
         input_report_abs(this_idev->idev, ABS_X, 0x01);
         input_report_abs(this_idev->idev, ABS_DISTANCE, 0);
-        input_report_key(this_idev->idev, KEY_VOLUMEUP, 1);
+//        input_report_key(this_idev->idev, KEY_VOLUMEUP, 1);
         input_sync(this_idev->idev);
-        msleep(20);
-        input_report_key(this_idev->idev, KEY_VOLUMEUP, 0);
-        input_sync(this_idev->idev);
+    //    msleep(20);
+//        input_report_key(this_idev->idev, KEY_VOLUMEUP, 0);
+  //      input_sync(this_idev->idev);
         msleep(4000);
     }
 
