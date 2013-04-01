@@ -1,1 +1,0 @@
-cmd_/home/penn/lddexamples/input/input_driver.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.5.0-23-generic/scripts/module-common.lds --build-id  -o /home/penn/lddexamples/input/input_driver.ko /home/penn/lddexamples/input/input_driver.o /home/penn/lddexamples/input/input_driver.mod.o
