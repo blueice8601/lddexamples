@@ -20,14 +20,12 @@ static void input_work(struct work_struct *work)
 {
     while(1)
     {
-        input_report_abs(this_idev->idev, ABS_X, 0x01);
-        input_report_abs(this_idev->idev, ABS_DISTANCE, 0);
-//        input_report_key(this_idev->idev, KEY_VOLUMEUP, 1);
+        input_report_key(this_idev->idev, KEY_VOLUMEUP, 1);
         input_sync(this_idev->idev);
-    //    msleep(20);
-//        input_report_key(this_idev->idev, KEY_VOLUMEUP, 0);
-  //      input_sync(this_idev->idev);
-        msleep(4000);
+        msleep(20);
+        input_report_key(this_idev->idev, KEY_VOLUMEUP, 0);
+        input_sync(this_idev->idev);
+        msleep(400);
     }
 
 }
@@ -55,16 +53,6 @@ static int __init input_init(void)
 
     set_bit(EV_KEY, idev->evbit);
     set_bit(KEY_VOLUMEUP, idev->keybit);//115
-
-#define MIN -0xfff
-#define MAX 0xfff
-    idev->evbit[0] |= BIT_MASK(EV_ABS);
-    input_set_abs_params(idev, ABS_X, MIN, MAX, 0, 0);//g-sensor, TP
-
-    __set_bit(EV_SYN, idev->evbit);
-    input_set_abs_params(idev, ABS_DISTANCE, 0, 1, 0, 0);
-
-
     input_register_device(this_idev->idev);
     
     INIT_WORK(&pedata->i_work, input_work);

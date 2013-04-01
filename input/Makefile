@@ -13,5 +13,5 @@ clean:
 .PHONY: modules modules_install clean
 
 else
-	obj-m := input.o
+	obj-m := input_driver.o
 endif
